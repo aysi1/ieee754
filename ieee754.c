@@ -34,6 +34,6 @@ int main(int argc, char *argv[]) {
 	printf("le bit de signe : %d\n", (p[3] & 128) ? 1:0);
 	printf("exposant : %s\n", rep_bin((p[3]<<1) | ((p[2] & 128)>>7), 8));
 	printf("mantisse : %s\n", rep_bin(*((uint32_t*)&f) & (-1 + (1<<23)), 23));
-	printf("IEEE754 : %d\n", *((uint32_t*) &f));
+	printf("IEEE754 : %d\n", binaire(*((uint32_t*) &f)));
 	return 0;
 }
